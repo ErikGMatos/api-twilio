@@ -3,7 +3,7 @@ import { jwt } from 'twilio';
 
 class TokenController {
   async store(req, res) {
-    const { identity } = req.body;
+    const { identity } = req.query;
     if (!identity) {
       return res.status(401).json({ error: 'Nome do usuário é obrigatório.' });
     }
